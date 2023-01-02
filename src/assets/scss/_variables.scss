@@ -1,0 +1,92 @@
+$colors: (
+  Glory: #38407b,
+  DeepGlory: #1f223e,
+  DarkSky: #0e1b2e,
+  Barby: #ff6584,
+  Imperial: #bf463b,
+  Mustard: #fcc359,
+  Apricot: #f2bf5e,
+  Energy: #ffb30d,
+  GreenMatt: #3ead5e,
+  Pine: #006064,
+  Bloody: #bf0b3b,
+  Mint: #4caf50,
+  Pistachio: #b7d996,
+  GreyCream: #e0e0e0,
+  Ashes: #c0c0c0,
+  Smoky: #a7a7a7,
+  Gray: #8d8d8d,
+  GloryLight: #9fc3e6,
+  Mestrious: #171717,
+  DarkNight: #111111,
+  Ocean: #3ca8c3,
+  Copper: #c19d60,
+  ShinyCopper: #d2aa6a,
+  BrownMatt: #292929,
+  Facebook: #3b5998,
+  Twitter: #1da1f2,
+  Youtube: #ff0000,
+  Linkedin: #0a66c2,
+  Instagram: #c32aa3,
+  Whatsapp: #25d366,
+  Dribbble: #ea4c89,
+  Slack: #4a154b,
+  Telegram: #0088cc,
+  UltraViolet: #534c88,
+  Fairouz: #30c4c7,
+  FairouzDimmy: #298991,
+  SunLight: #facd71,
+  Brownish: #ab7b3a,
+  BrightBlue: #00abe4,
+  LightBlue: #e9f1fa,
+  PaleBlue: #effafd,
+  ROYALBlue: #4a8bdf,
+  
+  Primary: #162040,
+  Secondary: #91bbf2,
+  /* 
+  
+  */
+);
+$primary-clr: color(Glory);
+$secondary-clr: color(FairouzDimmy);
+$thirdly-clr: color(Mustard);
+
+$primary-clr-tint-100: tint($primary-clr, 10%);
+$primary-clr-tint-200: tint($primary-clr, 20%);
+$primary-clr-tint-400: tint($primary-clr, 40%);
+$primary-clr-shade-100: shade($primary-clr, 10%);
+$primary-clr-shade-200: shade($primary-clr, 20%);
+$primary-clr-shade-300: shade($primary-clr, 30%);
+
+$secondary-clr-tint-100: tint($secondary-clr, 10%);
+$secondary-clr-tint-200: tint($secondary-clr, 20%);
+$secondary-clr-tint-400: tint($secondary-clr, 40%);
+$secondary-clr-shade-100: shade($secondary-clr, 10%);
+$secondary-clr-shade-200: shade($secondary-clr, 20%);
+$secondary-clr-shade-300: shade($secondary-clr, 30%);
+$thirdly-clr-tint-100: lighten(#facd71, 20%);
+$light-shadow-clr: color(Ashes);
+$dark-shadow-clr: $secondary-clr-shade-300;
+
+@function color($colorName) {
+  @return map-get($colors, $colorName);
+}
+
+$screensWidths: (
+  Mini-Mobile: 360px,
+  Mobile: 576px,
+  Tablet: 768px,
+  XL-Tablet: 992px,
+  Desktop: 1200px,
+);
+
+@function screens($screenName) {
+  @return map-get($screensWidths, $screenName);
+}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}

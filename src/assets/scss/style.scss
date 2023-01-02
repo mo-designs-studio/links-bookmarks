@@ -1,0 +1,133 @@
+@import "./root";
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  direction: ltr;
+  font-family: "Inter", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: var(--standard-font-size);
+  color: $primary-clr;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // font-family: "Montserrat Alternates", sans-serif;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: normal;
+  overflow-wrap: break-word;
+}
+
+p,
+small {
+  overflow-wrap: break-word;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+h1 {
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-bold) !important;
+}
+
+h2 {
+  font-size: var(--fs-subheading);
+  font-weight: var(--fw-bolder) !important;
+}
+
+h3 {
+  font-size: var(--fs-tiny-heading);
+  font-weight: var(--fw-bolder) !important;
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--fs-tiny-heading);
+  font-weight: var(--fw-medium);
+}
+
+
+main {
+  width: 100%;
+  min-height: var(--main-min-height);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 319px) {
+  * {
+    display: none;
+  }
+}

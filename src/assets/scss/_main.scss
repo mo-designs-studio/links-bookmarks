@@ -1,0 +1,476 @@
+@import "./root";
+@import "./variables";
+@import "./mixins";
+
+/* text classes | Start */
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.text-capitalize-first {
+  &::first-letter {
+    text-transform: capitalize !important;
+  }
+}
+
+.text-align-justify {
+  text-align: justify !important;
+}
+
+.fs-heading {
+  font-size: var(--fs-heading);
+}
+
+.fs-subheading {
+  font-size: var(--fs-subheading);
+}
+
+.fs-body {
+  font-size: var(--fs-body-200);
+}
+
+.fs-nav {
+  font-size: var(--fs-nav);
+}
+
+.fs-small {
+  font-size: var(--fs-small);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-bolder {
+  font-weight: var(--fw-bolder);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-thin {
+  font-weight: var(--fw-thin);
+}
+
+.text-primary {
+  color: $primary-clr !important;
+}
+
+.text-secondary {
+  color: $secondary-clr !important;
+}
+
+.text-thirdly {
+  color: $thirdly-clr !important;
+}
+
+.text-facebook {
+  color: color(Facebook) !important;
+}
+
+.text-whatsapp {
+  color: color(Whatsapp) !important;
+}
+
+.text-youtube {
+  color: color(Youtube) !important;
+}
+
+.text-instagram {
+  color: color(Instagram) !important;
+}
+
+.text-linkedin {
+  color: color(Linkedin) !important;
+}
+
+.text-twitter {
+  color: color(Twitter) !important;
+}
+
+.text-black {
+  color: #000 !important;
+}
+
+.paragraph-style {
+  color: $primary-clr-tint-400;
+  font-size: var(--fs-body-200);
+  font-weight: var(--fw-regular);
+  text-align: justify;
+}
+
+.paragraph-limited-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* text classes | End */
+
+/* Backgrounds classes | Start */
+.no-bg-image {
+  &::before {
+    background-image: none !important;
+  }
+}
+
+/* Backgrounds classes | End */
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursorless {
+  cursor: none !important;
+}
+
+/* other classes | Start */
+.overflow-x-disabled {
+  overflow-x: hidden !important;
+}
+
+.flip-vertical {
+  transform: rotateX(180deg);
+}
+
+.flip-horizontal {
+  transform: rotateY(180deg);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.cover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.expanded {
+  flex-grow: 1;
+}
+
+.seperator {
+  width: 100%;
+  margin-block: 5px;
+  border-block: 0.5px solid color(GreyCream);
+}
+
+.selection-none {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}
+
+.viewport-width {
+  width: var(--max-view-width);
+}
+
+.viewport-padding {
+  padding-left: var(--spacing-unit);
+  padding-right: var(--spacing-unit);
+}
+
+.position-zero {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.background-image-cover {
+  /* to add as pseudo element */
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  @extend .position-zero;
+  opacity: 0.1;
+}
+
+.card-box-shadow-light {
+  box-shadow: var(--card-box-shadow-size) $light-shadow-clr;
+}
+
+.card-box-shadow-dark {
+  box-shadow: var(--card-box-shadow-size) $dark-shadow-clr;
+}
+
+.surrounded-shadow-light {
+  box-shadow: var(--surrounded-shadow-size) $light-shadow-clr;
+}
+
+.surrounded-shadow-dark {
+  box-shadow: var(--surrounded-shadow-size) $dark-shadow-clr;
+}
+
+.pre-title-text {
+  font-size: var(--fs-pre-heading) !important;
+  text-align: center;
+  text-transform: capitalize;
+  display: block;
+}
+
+.icon-decoration {
+  font-size: var(--fs-icon-regular);
+  display: flex;
+
+  &::after {
+    content: "";
+    width: 10px;
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-text {
+  font-size: var(--fs-body-100);
+  font-weight: var(--fw-medium);
+  text-transform: capitalize;
+}
+
+.title-header-section {
+  width: 100%;
+  height: 80px;
+  padding-inline: var(--spacing-unit);
+  position: relative;
+  border-bottom: 1px solid color(GreyCream);
+
+  &::before {
+    @extend .background-image-cover;
+    background-image: url("/assets/img/backgrounds/islamic-colorful-pattern.jpg");
+    background-position: center right;
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  .title-header-container {
+    width: var(--max-view-width);
+    height: inherit;
+    margin-inline: auto;
+
+    .title-header {
+      width: 100%;
+      height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+
+      .bi {
+        @extend .icon-decoration;
+        font-size: var(--fs-icon-lg);
+      }
+
+      h1 {
+        font-size: var(--fs-pre-heading);
+        font-weight: var(--fw-bolder) !important;
+        white-space: nowrap;
+        line-height: normal;
+      }
+    }
+  }
+
+  @include onScreenMinWidth(screens(Tablet)) {
+    height: 100px;
+
+    .title-header-container {
+      .title-header {
+        .bi {
+          font-size: var(--fs-icon-subheading);
+        }
+
+        h1 {
+          font-size: var(--fs-subheading);
+        }
+      }
+    }
+  }
+}
+
+/* other classes | End */
+
+/* Tooltip classes | Start */
+.tooltip-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &:hover .tooltip,
+  &:focus .tooltip {
+    display: block;
+  }
+}
+
+.tooltip {
+  max-width: var(--tool-tip-width);
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  border-radius: 5px;
+  background-color: $secondary-clr;
+  color: white;
+  text-align: center;
+  font-size: var(--fs-body-100);
+  font-weight: var(--fw-medium);
+  @extend .surrounded-shadow-dark;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    margin-left: -7.5px;
+    border-width: 7.5px;
+    border-style: solid;
+    border-color: $secondary-clr transparent transparent transparent;
+  }
+}
+
+.tooltip-top {
+  @extend .tooltip;
+  bottom: 100%;
+
+  &::after {
+    top: 100%;
+  }
+}
+
+.tooltip-bottom {
+  @extend .tooltip;
+  top: 100%;
+
+  &::after {
+    bottom: 100%;
+  }
+}
+
+/* Tooltip classes | End */
+
+/* Dialog styling | Start */
+.dialog-widnow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  display: none;
+  background-color: rgba($color: black, $alpha: .85);
+}
+
+.dialog-container {
+  width: min(90%, 500px);
+  height: fit-content;
+  max-height: 80vh;
+  padding-block: var(--spacing-unit);
+  margin-top: var(--spacing-unit);
+  margin-inline: auto;
+  background-color: $secondary-clr;
+  background-color: white;
+  @extend .card-box-shadow-dark;
+  overflow-y: scroll;
+}
+
+.dialog-header {
+  width: 100%;
+  padding-bottom: var(--spacing-unit-half);
+  padding-inline: var(--spacing-unit);
+  border-bottom: 1px solid color(GreyCream);
+}
+
+.dialog-body {
+  width: 100%;
+  padding-inline: var(--spacing-unit);
+  margin-block: var(--spacing-unit);
+}
+
+.dialog-actions-bar {
+  width: 100%;
+  padding-top: var(--spacing-unit-half);
+  padding-inline: var(--spacing-unit);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  column-gap: 4%;
+  row-gap: var(--spacing-unit-half);
+  border-top: 1px solid color(GreyCream);
+
+  button {
+    height: 40px;
+  }
+
+  button:first-child {
+    background-color: $secondary-clr;
+    border: 1px solid $secondary-clr-tint-200;
+
+    span {
+      color: white;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $secondary-clr-shade-100;
+      border-color: $secondary-clr-tint-400;
+    }
+  }
+
+  button:last-child {
+    background-color: white;
+    border: 1px solid color(GreyCream);
+
+    span {
+      color: $secondary-clr;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 10px $secondary-clr;
+    }
+  }
+}
+
+/* Dialog styling | End */

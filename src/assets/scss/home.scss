@@ -1,0 +1,198 @@
+@import "./variables";
+@import "./main";
+@import "./mixins";
+@import "./form-components";
+
+.main {
+    height: var(--main-min-height);
+}
+
+.bookmarks-section {
+    width: 100%;
+    padding: var(--spacing-unit);
+    margin-inline: auto;
+}
+
+.bookmarks-container {
+    width: var(--max-view-width);
+    margin-inline: auto;
+    display: grid;
+}
+
+.bookmark-card {
+    margin-bottom: var(--spacing-unit);
+    background-color: white;
+    @extend .surrounded-shadow-light;
+    border-radius: 5px;
+}
+
+.bookmark-card-header {
+    height: 45px;
+    padding-inline: var(--spacing-unit);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary-clr;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    .bookmark-title {
+        h3 {
+            color: white;
+            font-size: var(--fs-body-100);
+            font-weight: var(--fw-medium) !important;
+            text-transform: lowercase;
+            text-align: start;
+
+            &::first-letter {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .bookmark-category {
+        display: flex;
+        align-items: center;
+        color: white;
+
+        .bi {
+            color: color(Energy);
+            @extend .icon-decoration;
+        }
+
+        span {
+            font-size: var(--fs-body-100);
+            font-weight: var(--fw-medium);
+            text-transform: capitalize;
+        }
+    }
+}
+
+.bookmark-card-body {
+    padding-inline: var(--spacing-unit);
+    margin-block: var(--spacing-unit-half);
+    display: grid;
+    row-gap: var(--spacing-unit-half);
+}
+
+.bookmark-bio {
+    display: block;
+    padding-inline-start: var(--spacing-unit);
+    border-inline-start: 5px solid $primary-clr;
+
+    p {
+        color: $primary-clr-tint-400;
+        @extend .paragraph-limited-3;
+        -webkit-line-clamp: 2;
+        font-size: var(--fs-body-100);
+    }
+}
+
+.bookmark-links-container {
+    display: flex;
+    align-items: center;
+
+    .bi {
+        @extend .icon-decoration;
+    }
+
+    .link {
+        font-size: var(--fs-body-200);
+        padding-inline-end: var(--spacing-unit-half);
+
+        a {
+            color: $secondary-clr;
+            font-weight: var(--fw-medium);
+            text-transform: capitalize;
+        }
+    }
+}
+
+.bookmark-tags-container {
+    display: flex;
+
+    .bi {
+        @extend .icon-decoration;
+    }
+
+    .tag {
+        font-size: var(--fs-body-200);
+        padding-inline: 5px;
+        margin-inline-end: var(--spacing-unit-half);
+        @extend .flex-center;
+        background-color: $secondary-clr;
+
+        span {
+            color: white;
+            font-size: var(--fs-tiny-nav);
+            font-weight: var(--fw-medium);
+            text-transform: capitalize;
+        }
+    }
+}
+
+.bookmark-card-footer {
+    height: 35px;
+    padding-inline: var(--spacing-unit);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-clr-shade-300;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    .bookmark-domain {
+        height: inherit;
+        display: flex;
+        align-items: center;
+
+        .favicon-container {
+            height: 25px;
+            margin-inline-end: 5px;
+            aspect-ratio: 1/ 1;
+            @extend .flex-center;
+            background-color: white;
+            border-radius: 50%;
+
+            img {
+                max-height: 100%;
+            }
+        }
+
+        a {
+            color: $primary-clr-tint-400;
+            font-weight: var(--fw-medium);
+
+            &:hover {
+                color: $secondary-clr-tint-400;
+            }
+        }
+
+    }
+
+    .bookmark-type {
+        margin-inline-start: auto;
+
+        .bi {
+            color: color(Mint);
+        }
+    }
+
+    .bookmark-priority {
+        margin-inline-start: var(--spacing-unit-half);
+
+        .bi {
+            color: color(Ashes);
+        }
+    }
+}
+
+.bookmarks-filter-section {
+    width: 100%;
+    padding: var(--spacing-unit);
+}
+
+.bookmarks-filter-container {
+    width: var(--max-width-view);
+    margin-inline: auto;
+}

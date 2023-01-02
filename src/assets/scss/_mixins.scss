@@ -1,0 +1,28 @@
+@import "./variables";
+
+@mixin onScreenMaxWidth($screenWidth) {
+  @media (max-width: $screenWidth) {
+    @content;
+  }
+}
+@mixin onScreenMinWidth($screenWidth) {
+  @media (min-width: $screenWidth) {
+    @content;
+  }
+}
+@mixin onScreenMinMaxWidth($minWidth, $maxWidth) {
+  @media (min-width: $minWidth) and (max-width: ($maxWidth - 1px)) {
+    @content;
+  }
+}
+@mixin onScreenMaxHeight($maxHeight) {
+  @media (max-height: $maxHeight) {
+    @content;
+  }
+}
+@mixin hideOnMaxHeight($maxHeight) {
+  @media (max-height: $maxHeight) {
+    display: none;
+  }
+}
+

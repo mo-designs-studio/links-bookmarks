@@ -1,0 +1,258 @@
+$elementHeight : 45px;
+
+label {
+    color: $secondary-clr;
+    font-size: var(--fs-body-100);
+    font-weight: var(--fw-medium);
+    text-transform: capitalize;
+}
+
+.form-row {
+    width: 100%;
+    margin-bottom: var(--spacing-unit-half);
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    column-gap: var(--spacing-unit-half);
+
+    &:last-child {
+        grid-template-columns: 70% 30%;
+    }
+}
+
+.form-field {
+    width: 100%;
+}
+
+.form-field--input-group,
+.form-field--text-area-group {
+    height: $elementHeight;
+    width: 100%;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid color(GreyCream);
+    background-clip: border-box;
+    margin: 5px auto;
+}
+
+input,
+select,
+textarea {
+    width: calc(100% - 45px);
+    padding: 5px 10px;
+    color: $primary-clr;
+    font-size: var(--fs-body-100);
+    font-weight: var(--fw-medium);
+    text-transform: lowercase;
+    border: none;
+    border-end-end-radius: 5px;
+    border-start-end-radius: 5px;
+}
+
+select {
+    appearance: none;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: lighten($color: $secondary-clr, $amount: 40%);
+    box-shadow: 0 0 10px $secondary-clr-tint-400;
+}
+
+.form-field--text-area-group {
+    height: 150px;
+}
+
+textarea {
+    line-height: 1.75;
+    resize: none;
+}
+
+.input-group--icon {
+    height: 100%;
+    aspect-ratio: 1 /1;
+    @extend .flex-center;
+    background-color: white;
+    border-start-start-radius: 5px;
+    border-end-start-radius: 5px;
+
+    .bi {
+        font-size: var(--fs-icon-regular);
+        margin: auto;
+    }
+}
+
+.input-group--icon::after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    border-right: 1px solid color(GreyCream);
+}
+
+input::placeholder {
+    color: color(Smoky);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
+}
+
+button {
+    height: $elementHeight;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    @extend .card-box-shadow-light;
+    background-clip: border-box;
+    margin: auto;
+    cursor: pointer;
+
+    span {
+        display: flex;
+        @extend .flex-center;
+
+        .bi {
+            @extend .icon-decoration;
+        }
+
+        @extend .button-text;
+    }
+}
+
+button:focus,
+button:hover {
+    outline: none;
+}
+
+.search-select-field {
+    position: relative;
+}
+
+.search-select-field input:focus+.filter-results-container {
+    display: block;
+}
+
+.filter-results-container {
+    max-height: 200px;
+    width: 100%;
+
+    position: absolute;
+    top: $elementHeight;
+    z-index: 1;
+    background-color: white;
+    border: 1px solid color(GreyCream);
+    border-radius: 5px;
+    display: none;
+
+    ul li {
+        height: 40px;
+        padding-inline: var(--spacing-unit-half);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            border-bottom: .5px solid color(GreyCream);
+        }
+
+        .bi {
+            @extend .icon-decoration;
+            color: color(GreyCream);
+        }
+
+        span {
+            color: $primary-clr;
+            font-size: var(--fs-tiny-nav);
+            font-weight: var(--fw-medium);
+
+        }
+
+        .text-span::first-letter {
+            text-transform: capitalize;
+        }
+    }
+}
+
+/* custom check box styling | Start */
+/* Form field */
+.checkbox-form-field {
+    padding-inline: 5px;
+    display: flex;
+}
+
+/* The container */
+.checkbox-container {
+    height: $elementHeight;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+
+    label {
+        font-size: var(--fs-tiny-nav);
+        color: color(Imperial);
+        margin-inline-end: var(--spacing-unit-half);
+    }
+}
+
+.checkbox {
+    height: 20px;
+    width: 20px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+}
+
+/* Hide the browser's default checkbox */
+.checkbox input {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    @extend .position-zero;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.fake-checkbox {
+    height: inherit;
+    width: inherit;
+
+    @extend .flex-center;
+    background-color: white;
+    border: 1px solid $secondary-clr-tint-400;
+
+    .bi {
+        color: white !important;
+        font-size: var(--fs-icon-lg);
+    }
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input~.fake-checkbox {
+    background-color: color(Ashes);
+
+    .bi {
+        color: color(Ashes) !important;
+    }
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked~.fake-checkbox {
+    background-color: $primary-clr;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked~.fake-checkbox {
+    display: flex;
+
+    .bi {
+        color: white !important;
+    }
+}
+
+/* custom check box styling | End */

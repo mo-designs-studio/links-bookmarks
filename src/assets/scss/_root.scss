@@ -1,0 +1,63 @@
+@import "./variables";
+
+:root {
+  --header-height: 65px;
+  --signbar-height: 30px;
+  --footer-height: 1100px;
+  --max-width: 1200px;
+  --max-view-width: min(100%, var(--max-width));
+  --main-min-height: calc(100vh - var(--header-height));
+  --standard-font-size: 16px;
+  --spacing-unit-half: 0.75rem;
+  --spacing-unit: 1.5rem;
+  --spacing-unit-2x: 3rem;
+  --fs-heading: 3rem;
+  --fs-tiny-heading: 2.5rem;
+  --fs-subheading: 2.25rem;
+  --fs-tiny-subheading: 1.75rem;
+  --fs-pre-heading: 2rem;
+  --fs-card-title: 1.5rem;
+  --fs-body-600: 1.75rem;
+  --fs-body-500: 1.5rem;
+  --fs-body-400: 1.375rem;
+  --fs-body-300: 1.25rem;
+  --fs-body-200: 1.125rem;
+  --fs-body-100: 1rem;
+  --fs-nav: 1rem;
+  --fs-tiny-nav: .875rem;
+  --fs-small: max(11px, 0.75rem);
+  --fs-icon-heading: 3rem;
+  --fs-icon-subheading: 2.5rem;
+  --fs-icon-lg: 1.875rem;
+  --fs-icon-regular: 1.375rem;
+  --fs-icon-small: 1rem;
+  --fw-bold: 700;
+  --fw-bolder: 600;
+  --fw-medium: 500;
+  --fw-regular: 400;
+  --fw-thin: 300;
+  --primary-clr: #00ABE4; // BrightBlue
+  --secondary-clr: #E9F1FA; // LightBlue
+  --card-box-shadow-size: 3px 6px 12px;
+  --surrounded-shadow-size: 0 0 10px;
+  --tool-tip-width: 150px;
+}
+
+@media (min-width: screens(XL-Tablet)) {
+  :root {
+    --header-height: 90px;
+    --footer-height: 500px;
+  }
+}
+
+@media (max-width: screens(Mobile)) {
+  :root {
+    --standard-font-size: 14px;
+  }
+}
+
+@media (max-width: screens(Mini-Mobile)) {
+  :root {
+    --standard-font-size: 11.5px;
+  }
+}

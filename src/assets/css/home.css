@@ -1,0 +1,877 @@
+:root {
+  --header-height: 65px;
+  --signbar-height: 30px;
+  --footer-height: 1100px;
+  --max-width: 1200px;
+  --max-view-width: min(100%, var(--max-width));
+  --main-min-height: calc(100vh - var(--header-height));
+  --standard-font-size: 16px;
+  --spacing-unit-half: 0.75rem;
+  --spacing-unit: 1.5rem;
+  --spacing-unit-2x: 3rem;
+  --fs-heading: 3rem;
+  --fs-tiny-heading: 2.5rem;
+  --fs-subheading: 2.25rem;
+  --fs-tiny-subheading: 1.75rem;
+  --fs-pre-heading: 2rem;
+  --fs-card-title: 1.5rem;
+  --fs-body-600: 1.75rem;
+  --fs-body-500: 1.5rem;
+  --fs-body-400: 1.375rem;
+  --fs-body-300: 1.25rem;
+  --fs-body-200: 1.125rem;
+  --fs-body-100: 1rem;
+  --fs-nav: 1rem;
+  --fs-tiny-nav: .875rem;
+  --fs-small: max(11px, 0.75rem);
+  --fs-icon-heading: 3rem;
+  --fs-icon-subheading: 2.5rem;
+  --fs-icon-lg: 1.875rem;
+  --fs-icon-regular: 1.375rem;
+  --fs-icon-small: 1rem;
+  --fw-bold: 700;
+  --fw-bolder: 600;
+  --fw-medium: 500;
+  --fw-regular: 400;
+  --fw-thin: 300;
+  --primary-clr: #00ABE4;
+  --secondary-clr: #E9F1FA;
+  --card-box-shadow-size: 3px 6px 12px;
+  --surrounded-shadow-size: 0 0 10px;
+  --tool-tip-width: 150px;
+}
+
+@media (min-width: 992px) {
+  :root {
+    --header-height: 90px;
+    --footer-height: 500px;
+  }
+}
+@media (max-width: 576px) {
+  :root {
+    --standard-font-size: 14px;
+  }
+}
+@media (max-width: 360px) {
+  :root {
+    --standard-font-size: 11.5px;
+  }
+}
+/* text classes | Start */
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.text-capitalize-first::first-letter {
+  text-transform: capitalize !important;
+}
+
+.text-align-justify {
+  text-align: justify !important;
+}
+
+.fs-heading {
+  font-size: var(--fs-heading);
+}
+
+.fs-subheading {
+  font-size: var(--fs-subheading);
+}
+
+.fs-body {
+  font-size: var(--fs-body-200);
+}
+
+.fs-nav {
+  font-size: var(--fs-nav);
+}
+
+.fs-small {
+  font-size: var(--fs-small);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-bolder {
+  font-weight: var(--fw-bolder);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-thin {
+  font-weight: var(--fw-thin);
+}
+
+.text-primary {
+  color: #38407b !important;
+}
+
+.text-secondary {
+  color: #298991 !important;
+}
+
+.text-thirdly {
+  color: #fcc359 !important;
+}
+
+.text-facebook {
+  color: #3b5998 !important;
+}
+
+.text-whatsapp {
+  color: #25d366 !important;
+}
+
+.text-youtube {
+  color: #ff0000 !important;
+}
+
+.text-instagram {
+  color: #c32aa3 !important;
+}
+
+.text-linkedin {
+  color: #0a66c2 !important;
+}
+
+.text-twitter {
+  color: #1da1f2 !important;
+}
+
+.text-black {
+  color: #000 !important;
+}
+
+.paragraph-style {
+  color: #888cb0;
+  font-size: var(--fs-body-200);
+  font-weight: var(--fw-regular);
+  text-align: justify;
+}
+
+.paragraph-limited-3, .bookmark-bio p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* text classes | End */
+/* Backgrounds classes | Start */
+.no-bg-image::before {
+  background-image: none !important;
+}
+
+/* Backgrounds classes | End */
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursorless {
+  cursor: none !important;
+}
+
+/* other classes | Start */
+.overflow-x-disabled {
+  overflow-x: hidden !important;
+}
+
+.flip-vertical {
+  transform: rotateX(180deg);
+}
+
+.flip-horizontal {
+  transform: rotateY(180deg);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.cover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.expanded {
+  flex-grow: 1;
+}
+
+.seperator {
+  width: 100%;
+  margin-block: 5px;
+  border-block: 0.5px solid #e0e0e0;
+}
+
+.selection-none {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}
+
+.viewport-width {
+  width: var(--max-view-width);
+}
+
+.viewport-padding {
+  padding-left: var(--spacing-unit);
+  padding-right: var(--spacing-unit);
+}
+
+.position-zero, .checkbox input, .background-image-cover, .title-header-section::before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.background-image-cover, .title-header-section::before {
+  /* to add as pseudo element */
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  opacity: 0.1;
+}
+
+.card-box-shadow-light, button {
+  box-shadow: var(--card-box-shadow-size) #c0c0c0;
+}
+
+.card-box-shadow-dark, .dialog-container {
+  box-shadow: var(--card-box-shadow-size) #1d6066;
+}
+
+.surrounded-shadow-light, .bookmark-card {
+  box-shadow: var(--surrounded-shadow-size) #c0c0c0;
+}
+
+.surrounded-shadow-dark, .tooltip, .tooltip-bottom, .tooltip-top {
+  box-shadow: var(--surrounded-shadow-size) #1d6066;
+}
+
+.pre-title-text {
+  font-size: var(--fs-pre-heading) !important;
+  text-align: center;
+  text-transform: capitalize;
+  display: block;
+}
+
+.icon-decoration, .bookmark-tags-container .bi, .bookmark-links-container .bi, .bookmark-card-header .bookmark-category .bi, .filter-results-container ul li .bi, button span .bi, .title-header-section .title-header-container .title-header .bi {
+  font-size: var(--fs-icon-regular);
+  display: flex;
+}
+.icon-decoration::after, .bookmark-tags-container .bi::after, .bookmark-links-container .bi::after, .bookmark-card-header .bookmark-category .bi::after, .filter-results-container ul li .bi::after, button span .bi::after, .title-header-section .title-header-container .title-header .bi::after {
+  content: "";
+  width: 10px;
+}
+
+.flex-center, .bookmark-card-footer .bookmark-domain .favicon-container, .bookmark-tags-container .tag, .fake-checkbox, button span, .input-group--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-text, button span {
+  font-size: var(--fs-body-100);
+  font-weight: var(--fw-medium);
+  text-transform: capitalize;
+}
+
+.title-header-section {
+  width: 100%;
+  height: 80px;
+  padding-inline: var(--spacing-unit);
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+}
+.title-header-section::before {
+  background-image: url("/assets/img/backgrounds/islamic-colorful-pattern.jpg");
+  background-position: center right;
+  opacity: 0.1;
+  z-index: -1;
+}
+.title-header-section .title-header-container {
+  width: var(--max-view-width);
+  height: inherit;
+  margin-inline: auto;
+}
+.title-header-section .title-header-container .title-header {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.title-header-section .title-header-container .title-header .bi {
+  font-size: var(--fs-icon-lg);
+}
+.title-header-section .title-header-container .title-header h1 {
+  font-size: var(--fs-pre-heading);
+  font-weight: var(--fw-bolder) !important;
+  white-space: nowrap;
+  line-height: normal;
+}
+@media (min-width: 768px) {
+  .title-header-section {
+    height: 100px;
+  }
+  .title-header-section .title-header-container .title-header .bi {
+    font-size: var(--fs-icon-subheading);
+  }
+  .title-header-section .title-header-container .title-header h1 {
+    font-size: var(--fs-subheading);
+  }
+}
+
+/* other classes | End */
+/* Tooltip classes | Start */
+.tooltip-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip, .tooltip-container:hover .tooltip-bottom, .tooltip-container:hover .tooltip-top, .tooltip-container:focus .tooltip, .tooltip-container:focus .tooltip-bottom, .tooltip-container:focus .tooltip-top {
+  display: block;
+}
+
+.tooltip, .tooltip-bottom, .tooltip-top {
+  max-width: var(--tool-tip-width);
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  border-radius: 5px;
+  background-color: #298991;
+  color: white;
+  text-align: center;
+  font-size: var(--fs-body-100);
+  font-weight: var(--fw-medium);
+}
+.tooltip::after, .tooltip-bottom::after, .tooltip-top::after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  margin-left: -7.5px;
+  border-width: 7.5px;
+  border-style: solid;
+  border-color: #298991 transparent transparent transparent;
+}
+
+.tooltip-top {
+  bottom: 100%;
+}
+.tooltip-top::after {
+  top: 100%;
+}
+
+.tooltip-bottom {
+  top: 100%;
+}
+.tooltip-bottom::after {
+  bottom: 100%;
+}
+
+/* Tooltip classes | End */
+/* Dialog styling | Start */
+.dialog-widnow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.dialog-container {
+  width: min(90%, 500px);
+  height: fit-content;
+  max-height: 80vh;
+  padding-block: var(--spacing-unit);
+  margin-top: var(--spacing-unit);
+  margin-inline: auto;
+  background-color: #298991;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.dialog-header {
+  width: 100%;
+  padding-bottom: var(--spacing-unit-half);
+  padding-inline: var(--spacing-unit);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dialog-body {
+  width: 100%;
+  padding-inline: var(--spacing-unit);
+  margin-block: var(--spacing-unit);
+}
+
+.dialog-actions-bar {
+  width: 100%;
+  padding-top: var(--spacing-unit-half);
+  padding-inline: var(--spacing-unit);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  column-gap: 4%;
+  row-gap: var(--spacing-unit-half);
+  border-top: 1px solid #e0e0e0;
+}
+.dialog-actions-bar button {
+  height: 40px;
+}
+.dialog-actions-bar button:first-child {
+  background-color: #298991;
+  border: 1px solid #54a1a7;
+}
+.dialog-actions-bar button:first-child span {
+  color: white;
+}
+.dialog-actions-bar button:first-child:hover, .dialog-actions-bar button:first-child:focus {
+  background-color: #257b83;
+  border-color: #7fb8bd;
+}
+.dialog-actions-bar button:last-child {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+}
+.dialog-actions-bar button:last-child span {
+  color: #298991;
+}
+.dialog-actions-bar button:last-child:hover, .dialog-actions-bar button:last-child:focus {
+  box-shadow: 0 0 10px #298991;
+}
+
+/* Dialog styling | End */
+label {
+  color: #298991;
+  font-size: var(--fs-body-100);
+  font-weight: var(--fw-medium);
+  text-transform: capitalize;
+}
+
+.form-row {
+  width: 100%;
+  margin-bottom: var(--spacing-unit-half);
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  column-gap: var(--spacing-unit-half);
+}
+.form-row:last-child {
+  grid-template-columns: 70% 30%;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.form-field--input-group,
+.form-field--text-area-group {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  background-clip: border-box;
+  margin: 5px auto;
+}
+
+input,
+select,
+textarea {
+  width: calc(100% - 45px);
+  padding: 5px 10px;
+  color: #38407b;
+  font-size: var(--fs-body-100);
+  font-weight: var(--fw-medium);
+  text-transform: lowercase;
+  border: none;
+  border-end-end-radius: 5px;
+  border-start-end-radius: 5px;
+}
+
+select {
+  appearance: none;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #a1dfe5;
+  box-shadow: 0 0 10px #7fb8bd;
+}
+
+.form-field--text-area-group {
+  height: 150px;
+}
+
+textarea {
+  line-height: 1.75;
+  resize: none;
+}
+
+.input-group--icon {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: white;
+  border-start-start-radius: 5px;
+  border-end-start-radius: 5px;
+}
+.input-group--icon .bi {
+  font-size: var(--fs-icon-regular);
+  margin: auto;
+}
+
+.input-group--icon::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  border-right: 1px solid #e0e0e0;
+}
+
+input::placeholder {
+  color: #a7a7a7;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+}
+
+button {
+  height: 45px;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-clip: border-box;
+  margin: auto;
+  cursor: pointer;
+}
+button span {
+  display: flex;
+}
+button:focus,
+button:hover {
+  outline: none;
+}
+
+.search-select-field {
+  position: relative;
+}
+
+.search-select-field input:focus + .filter-results-container {
+  display: block;
+}
+
+.filter-results-container {
+  max-height: 200px;
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  z-index: 1;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  display: none;
+}
+.filter-results-container ul li {
+  height: 40px;
+  padding-inline: var(--spacing-unit-half);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.filter-results-container ul li:not(:last-child) {
+  border-bottom: 0.5px solid #e0e0e0;
+}
+.filter-results-container ul li .bi {
+  color: #e0e0e0;
+}
+.filter-results-container ul li span {
+  color: #38407b;
+  font-size: var(--fs-tiny-nav);
+  font-weight: var(--fw-medium);
+}
+.filter-results-container ul li .text-span::first-letter {
+  text-transform: capitalize;
+}
+
+/* custom check box styling | Start */
+/* Form field */
+.checkbox-form-field {
+  padding-inline: 5px;
+  display: flex;
+}
+
+/* The container */
+.checkbox-container {
+  height: 45px;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.checkbox-container label {
+  font-size: var(--fs-tiny-nav);
+  color: #bf463b;
+  margin-inline-end: var(--spacing-unit-half);
+}
+
+.checkbox {
+  height: 20px;
+  width: 20px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox input {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.fake-checkbox {
+  height: inherit;
+  width: inherit;
+  background-color: white;
+  border: 1px solid #7fb8bd;
+}
+.fake-checkbox .bi {
+  color: white !important;
+  font-size: var(--fs-icon-lg);
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .fake-checkbox {
+  background-color: #c0c0c0;
+}
+.checkbox:hover input ~ .fake-checkbox .bi {
+  color: #c0c0c0 !important;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .fake-checkbox {
+  background-color: #38407b;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .fake-checkbox {
+  display: flex;
+}
+.checkbox input:checked ~ .fake-checkbox .bi {
+  color: white !important;
+}
+
+/* custom check box styling | End */
+.main {
+  height: var(--main-min-height);
+}
+
+.bookmarks-section {
+  width: 100%;
+  padding: var(--spacing-unit);
+  margin-inline: auto;
+}
+
+.bookmarks-container {
+  width: var(--max-view-width);
+  margin-inline: auto;
+  display: grid;
+}
+
+.bookmark-card {
+  margin-bottom: var(--spacing-unit);
+  background-color: white;
+  border-radius: 5px;
+}
+
+.bookmark-card-header {
+  height: 45px;
+  padding-inline: var(--spacing-unit);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #38407b;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.bookmark-card-header .bookmark-title h3 {
+  color: white;
+  font-size: var(--fs-body-100);
+  font-weight: var(--fw-medium) !important;
+  text-transform: lowercase;
+  text-align: start;
+}
+.bookmark-card-header .bookmark-title h3::first-letter {
+  text-transform: capitalize;
+}
+.bookmark-card-header .bookmark-category {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.bookmark-card-header .bookmark-category .bi {
+  color: #ffb30d;
+}
+.bookmark-card-header .bookmark-category span {
+  font-size: var(--fs-body-100);
+  font-weight: var(--fw-medium);
+  text-transform: capitalize;
+}
+
+.bookmark-card-body {
+  padding-inline: var(--spacing-unit);
+  margin-block: var(--spacing-unit-half);
+  display: grid;
+  row-gap: var(--spacing-unit-half);
+}
+
+.bookmark-bio {
+  display: block;
+  padding-inline-start: var(--spacing-unit);
+  border-inline-start: 5px solid #38407b;
+}
+.bookmark-bio p {
+  color: #888cb0;
+  -webkit-line-clamp: 2;
+  font-size: var(--fs-body-100);
+}
+
+.bookmark-links-container {
+  display: flex;
+  align-items: center;
+}
+.bookmark-links-container .link {
+  font-size: var(--fs-body-200);
+  padding-inline-end: var(--spacing-unit-half);
+}
+.bookmark-links-container .link a {
+  color: #298991;
+  font-weight: var(--fw-medium);
+  text-transform: capitalize;
+}
+
+.bookmark-tags-container {
+  display: flex;
+}
+.bookmark-tags-container .tag {
+  font-size: var(--fs-body-200);
+  padding-inline: 5px;
+  margin-inline-end: var(--spacing-unit-half);
+  background-color: #298991;
+}
+.bookmark-tags-container .tag span {
+  color: white;
+  font-size: var(--fs-tiny-nav);
+  font-weight: var(--fw-medium);
+  text-transform: capitalize;
+}
+
+.bookmark-card-footer {
+  height: 35px;
+  padding-inline: var(--spacing-unit);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272d56;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.bookmark-card-footer .bookmark-domain {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+.bookmark-card-footer .bookmark-domain .favicon-container {
+  height: 25px;
+  margin-inline-end: 5px;
+  aspect-ratio: 1/1;
+  background-color: white;
+  border-radius: 50%;
+}
+.bookmark-card-footer .bookmark-domain .favicon-container img {
+  max-height: 100%;
+}
+.bookmark-card-footer .bookmark-domain a {
+  color: #888cb0;
+  font-weight: var(--fw-medium);
+}
+.bookmark-card-footer .bookmark-domain a:hover {
+  color: #7fb8bd;
+}
+.bookmark-card-footer .bookmark-type {
+  margin-inline-start: auto;
+}
+.bookmark-card-footer .bookmark-type .bi {
+  color: #4caf50;
+}
+.bookmark-card-footer .bookmark-priority {
+  margin-inline-start: var(--spacing-unit-half);
+}
+.bookmark-card-footer .bookmark-priority .bi {
+  color: #c0c0c0;
+}
+
+.bookmarks-filter-section {
+  width: 100%;
+  padding: var(--spacing-unit);
+}
+
+.bookmarks-filter-container {
+  width: var(--max-width-view);
+  margin-inline: auto;
+}
+
+/*# sourceMappingURL=home.css.map */
